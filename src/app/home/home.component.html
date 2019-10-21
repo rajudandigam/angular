@@ -5,3 +5,15 @@
   <p><button (click)="countClick()"> Click This Button</button></p>
   <p> <span>{{clickCounter}}</span> Times.</p>
 </div>
+
+<div class="play-container">
+  <p>
+    <label for="firstName">Pease Enter Your First Name </label> 
+    <input type="text" id="firstName" [(ngModel)]="firstName">
+  </p>
+  <p>
+    <label for="lastName">Pease Enter Your Last Name </label> 
+    <input type="text" id="lastName" [(ngModel)]="lastName">
+  </p>
+  <p> Your name is: {{firstName}} {{lastName}}</p>
+</div>
