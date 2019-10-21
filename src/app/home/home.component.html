@@ -15,5 +15,15 @@
     <label for="lastName">Pease Enter Your Last Name </label> 
     <input type="text" id="lastName" [(ngModel)]="lastName">
   </p>
-  <p> Your name is: {{firstName}} {{lastName}}</p>
+  <p> Your Name is: {{firstName}} {{lastName}}</p>
+</div>
+
+<div class="play-container">
+  <ng-template [ngIf]="clickCounter > 4" [ngIfElse]="none">
+    <p>You reached maximum clicks</p>
+  </ng-template>
+
+  <ng-template #none>
+    <p> Keep clicking </p>
+  </ng-template>
 </div>
