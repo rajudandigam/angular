@@ -1,0 +1,13 @@
+.users {
+  display: flex;
+  flex-wrap: wrap;
+
+  li {
+    list-style-type: none;
+    margin: 10px;
+  }
+  .username {
+    font-size: 16px;
+    font-weight: bold;
+  }
+}
