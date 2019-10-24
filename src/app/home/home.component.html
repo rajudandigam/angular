@@ -18,7 +18,12 @@
   <p> Your Name is: {{firstName}} {{lastName}}</p>
 </div>
 
-<div class="play-container">
+<div class="play-container" [style.background-color]="clickCounter > 4 ? 'red' : 'lightgray'">
+  <p [ngStyle]="{
+    'color': clickCounter > 4 ? 'white' : 'blue',
+    'border':  clickCounter > 4 ? '2px solid black' : 'none'
+  }">Status:</p>
+  <p [class.active]='clickCounter > 4'>Will be coming</p>
   <ng-template [ngIf]="clickCounter > 4" [ngIfElse]="none">
     <p>You reached maximum clicks</p>
   </ng-template>
