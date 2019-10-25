@@ -7,12 +7,14 @@ import { HomeComponent } from './home/home.component';
 import { ListComponent } from './list/list.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { TodoComponent } from './todo/todo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ListComponent
+    ListComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,
