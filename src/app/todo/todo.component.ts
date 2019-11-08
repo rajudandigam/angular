@@ -23,7 +23,7 @@ export class TodoComponent implements OnInit {
       return;
 
     this.taskList.push({
-      id: `${taskName}${Math.random() * 1000}`,
+      id: `${taskName}${Math.floor(Math.random() * 1000)}`,
       task: taskName,
       done: false
     });
@@ -31,6 +31,5 @@ export class TodoComponent implements OnInit {
 
   toggleStatus(task: any) {
     task.done = !task.done;
-  } 
-
+  }
 }

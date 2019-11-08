@@ -33,6 +33,32 @@
 
     li {
       list-style-type: none;
+
+      input[type="checkbox"] {
+        opacity: 0;
+        position: absolute;
+      
+        & + label {
+          position: relative;
+          cursor: pointer;
+          padding: 0;
+        }
+
+        & + label::before {
+          content: '';
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          background-color: white;
+          border-radius: 5px;
+          margin: 0 5px;
+          vertical-align: text-top;
+        }
+
+        &:checked + label:before {
+          background-color: black;
+        }
+      }
     }
 
     .task {

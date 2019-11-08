@@ -16,8 +16,8 @@
     <ul *ngIf=taskList class="task-list">
       <li *ngFor="let task of taskList">
         <div class="task" [class.done]="task.done">
-          <input type="checkbox" [checked]="task.done" (change)="toggleStatus(task)" id="task.id">
-          <span>{{ task.task }}</span>
+          <input type="checkbox" [checked]="task.done" (change)="toggleStatus(task)" [id]="task.id">
+          <label [for]="task.id">{{ task.task }}</label>
         </div>
       </li>
     </ul>
