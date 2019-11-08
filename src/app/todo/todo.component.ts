@@ -19,12 +19,20 @@ export class TodoComponent implements OnInit {
   ngOnInit() {
   }
 
-  addTask() {
+  addTask(event: any) {
+    if(this.taskList.find(task => task.task === this.taskName))
+      return;
+
     this.taskList.push({
       id: Math.random() * 1000,
       task: this.taskName,
       done: false
-    })
+    });
+    console.log(event);
   }
+
+  toggleStatus(event: any) {
+    console.log(event);
+  } 
 
 }
