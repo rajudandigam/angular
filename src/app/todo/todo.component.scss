@@ -27,4 +27,24 @@
       border-radius: 10px;
     }
   }
+
+  .task-list {
+    margin: 0;
+
+    li {
+      list-style-type: none;
+    }
+
+    .task {
+      padding: 10px;
+      background-color: darkseagreen;
+      border: 2px solid green;
+      border-radius:2px;
+      text-align: left;
+    }
+    .done {
+      font-weight: bold;
+      text-decoration: line-through;
+    }
+  }
 }
