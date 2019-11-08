@@ -7,9 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoComponent implements OnInit {
 
-  taskName: string = '';
   taskList: {
-    id: number,
+    id: string,
     task: string,
     done: boolean
   }[] = [];
@@ -19,20 +18,19 @@ export class TodoComponent implements OnInit {
   ngOnInit() {
   }
 
-  addTask(event: any) {
-    if(this.taskList.find(task => task.task === this.taskName))
+  addTask(taskName: any) {
+    if(!taskName || this.taskList.find(task => task.task === taskName))
       return;
 
     this.taskList.push({
-      id: Math.random() * 1000,
-      task: this.taskName,
+      id: `${taskName}${Math.random() * 1000}`,
+      task: taskName,
       done: false
     });
-    console.log(event);
   }
 
-  toggleStatus(event: any) {
-    console.log(event);
+  toggleStatus(task: any) {
+    task.done = !task.done;
   } 
 
 }

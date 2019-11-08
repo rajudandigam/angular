@@ -4,11 +4,11 @@
     <p>
       <label for="task">Task Description</label>
     </p>
-    <p class="taskInput">
-      <input type="text" id="task" name="task" [(ngModel)]="taskName"/>
+    <p class="task-input">
+      <input type="text" id="task" name="task" #taskInput/>
     </p>
-    <p class="taskAdd">
-      <button type="submit" (click)="addTask($event)">Add</button>
+    <p class="task-add">
+      <button type="submit" (click)="addTask(taskInput.value); taskInput.value=''">Add</button>
     </p>
   </form>
 
@@ -16,7 +16,7 @@
     <ul *ngIf=taskList class="task-list">
       <li *ngFor="let task of taskList">
         <div class="task" [class.done]="task.done">
-          <input type="checkbox" [checked]="task.done" (change)="toggleStatus($event)" id="task.id">
+          <input type="checkbox" [checked]="task.done" (change)="toggleStatus(task)" id="task.id">
           <span>{{ task.task }}</span>
         </div>
       </li>
